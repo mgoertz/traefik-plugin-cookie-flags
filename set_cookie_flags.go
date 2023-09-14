@@ -10,7 +10,7 @@ const setCookieHeader string = "Set-Cookie"
 
 // Config the plugin configuration.
 type Config struct {
-	SameSite string `json:"sameSite,omitempty" toml:"sameSite,omitempty" yaml:"sameSite,omitempty"`
+	SameSite http.SameSite `json:"sameSite,omitempty" toml:"sameSite,omitempty" yaml:"sameSite,omitempty"`
 }
 
 // CreateConfig creates the default plugin configuration.
@@ -22,7 +22,7 @@ func CreateConfig() *Config {
 type CookieFlagger struct {
 	next     http.Handler
 	name     string
-	sameSite string
+	sameSite http.SameSite
 }
 
 // New creates new instance of the plugin.
@@ -35,22 +35,9 @@ func New(_ context.Context, next http.Handler, config *Config, name string) (htt
 }
 
 func (p *CookieFlagger) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
-	_sameSite := http.SameSiteDefaultMode //nolint
-
-	switch p.sameSite {
-	case "lax":
-		_sameSite = http.SameSiteLaxMode
-	case "strict":
-		_sameSite = http.SameSiteStrictMode
-	case "none":
-		_sameSite = http.SameSiteNoneMode
-	default:
-		_sameSite = http.SameSiteDefaultMode
-	}
-
 	myWriter := &responseWriter{
 		writer:   rw,
-		sameSite: _sameSite,
+		sameSite: p.sameSite,
 	}
 
 	p.next.ServeHTTP(myWriter, req)
