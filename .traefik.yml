@@ -1,8 +1,8 @@
-displayName: Prefix Cookie Path Plugin
+displayName: Flag Cookie Plugin
 type: middleware
-import: github.com/SchmitzDan/traefik-plugin-cookie-path-prefix
+import: github.com/lambda-it/traefik-plugin-cookie-flags
 
-summary: 'Add Prefix to the path of a cookie in the response'
+summary: "Add Flags to the cookie in the response"
 
 testData:
-  prefix: foo
+  sameSite: "Lax"

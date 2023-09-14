@@ -16,7 +16,7 @@ linters-settings:
     min-len: 5
     min-occurrences: 4
   misspell:
-    locale: US
+    locale: CH
   funlen:
     lines: -1
     statements: 50
