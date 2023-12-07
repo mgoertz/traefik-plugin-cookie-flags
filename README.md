@@ -33,7 +33,7 @@ http:
     cookieFlags:
       plugin:
         cookieFlags:
-          sameSite: "Nonde"
+          sameSite: "None"
 ```
 
 Inspired by https://github.com/SchmitzDan/traefik-plugin-cookie-path-prefix
