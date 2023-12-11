@@ -8,8 +8,8 @@
 experimental:
   plugins:
     cookieFlags:
-      modulename: "github.com/lambda-it/traefik-plugin-cookie-flags"
-      version: "v0.0.1" #replace with newest version
+      modulename: "github.com/Lambda-IT/traefik-plugin-cookie-flags"
+      version: "v0.1.0" #replace with newest version
 ```
 
 ### Dynamic
