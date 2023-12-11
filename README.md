@@ -8,7 +8,7 @@
 experimental:
   plugins:
     cookieFlags:
-      modulename: "github.com/Lambda-IT/traefik-plugin-cookie-flags"
+      modulename: "github.com/lambda-it/traefik-plugin-cookie-flags"
       version: "v0.0.1" #replace with newest version
 ```
 

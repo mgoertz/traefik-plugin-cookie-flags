@@ -1,3 +1,3 @@
-module github.com/Lambda-IT/traefik-plugin-cookie-flags
+module github.com/lambda-it/traefik-plugin-cookie-flags
 
 go 1.19
