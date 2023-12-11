@@ -1,6 +1,6 @@
 displayName: Flag Cookie Plugin
 type: middleware
-import: github.com/lambda-it/traefik-plugin-cookie-flags
+import: github.com/Lambda-IT/traefik-plugin-cookie-flags
 
 summary: "Add Flags to the cookie in the response"
 
